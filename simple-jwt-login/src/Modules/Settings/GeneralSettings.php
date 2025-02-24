@@ -199,8 +199,7 @@ class GeneralSettings extends BaseSettings implements SettingsInterface
                         )
                     );
                 }
-            }
-            if (strpos($this->post['jwt_algorithm'], 'RS') !== false) {
+            } elseif (strpos($this->post['jwt_algorithm'], 'RS') !== false) {
                 if (!isset($this->post['decryption_key_public'])
                     || empty(trim($this->post['decryption_key_public']))
                     || !isset($this->post['decryption_key_private'])
